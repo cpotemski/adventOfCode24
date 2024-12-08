@@ -5,6 +5,7 @@ const toIntArray = (arr) => arr.map(el => parseInt(el))
 const to2DArray = (data, separator = "") => data.split("\n").filter(a => !!a).map(line => line.split(separator))
 const transpose2DArray = a => a[0].map((_, c) => a.map(r => r[c]));
 const reverse = str => str.split("").reverse().join("");
+const flat = el => Array.isArray(el) ? el.flat() : el;
 
 module.exports = {
     arraySum,
@@ -13,5 +14,6 @@ module.exports = {
     toIntArray,
     to2DArray,
     transpose2DArray,
-    reverse
+    reverse,
+    flat
 }
